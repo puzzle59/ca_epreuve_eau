@@ -1,6 +1,8 @@
 import sys
-string=sys.argv[1]
+#Fonctions
 def is_char(char):
+
+    #est-ce que le caractère est une lettre? avec table ascii
     if (ord(char)>=65 and ord(char)>= 90) or (ord(char)>=97 and ord(char)<=122):
         return True
     else:
@@ -17,5 +19,13 @@ def display(string):
             else:
                 print(item.lower(),end='')
                 a=1
-
-display(sys.argv[1])
+#Gestion d'Erreur
+        else:
+            sys.exit("lettres uniquement")
+#parsing
+array=sys.argv[1:]
+full_string=""
+for string in array:
+    full_string+=' '+string
+#Affichage
+display(full_string)
